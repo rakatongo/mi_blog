@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base  
   attr_accessible :contenido, :titulo
+  has_many :comentarios
 
   validates :contenido, :titulo, presence: true 
   validates :contenido, :titulo, length: { minimum: 5 }

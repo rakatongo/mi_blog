@@ -14,6 +14,18 @@ module ApplicationHelper
 		a = ["rojo","amarillo","violeta","azul","verde"]
 		a[rand(4)]
 	end
+
+
+	def comen(com)
+		case com
+		when 0
+			"Dejar un comentario."	
+		when 1
+			"#{com} comentario"
+		else
+			"#{com} comentarios"		
+		end
+	end
 end
 
 

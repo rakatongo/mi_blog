@@ -192,7 +192,14 @@ body{
 			color: $gris;
 			padding-left: 100px;
 			margin-bottom: 5px;
+			span{
+				font-weight: bold;
+				color: $grisclaro;
+				margin-right: 100px;
+				float: right;
+			}
 		}
+		/*  Parrafos */ 
 	.parrafo_show{
 		line-height: 1.6em;
 		font-family: Verdana;

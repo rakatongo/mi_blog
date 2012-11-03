@@ -1,6 +1,8 @@
 MiBlog::Application.routes.draw do
 
-  resources :posts
+  resources :posts do
+    resources :comentarios
+  end
 
   root to: 'posts#index'
   # The priority is based upon order of creation:
