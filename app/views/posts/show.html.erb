@@ -1,0 +1,5 @@
+<% a = random_color %>
+<h2 class="<%= a %>"><%= link_to @post.titulo, post_path(@post)%></h2>
+<article>
+	<p class="<%= a %> parrafo_show"><%= raw @post.contenido %></p>
+</article>

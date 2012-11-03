@@ -1,0 +1,25 @@
+<div class="form">
+	<div class="error">
+		<% if @post.errors.any? %>
+			<ul>
+				<% @post.errors.each do |error,msg| %>			
+					<li><%= error.capitalize %>: <%= msg %></li>			
+				<% end %>		
+			</ul>
+		<% end %>
+	</div>
+	<%= form_for @post do |f| %>
+		<div class="field">
+			<%= f.label :titulo %>
+			<%= f.text_field :titulo, placeholder: "Titulo del Post." %>
+		</div>
+		<div class="field">
+			<%= f.label :contenido %>			
+			<%= f.text_area :contenido, placeholder: "Contenido del Post." %>
+		</div>
+		<div class="field">
+			<%= f.submit "Guardar post" %>
+		</div>
+	<% end %>
+</div>
+	

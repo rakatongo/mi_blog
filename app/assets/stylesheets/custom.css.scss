@@ -1,0 +1,208 @@
+
+
+$fondo: #1A1817;
+$borde: #404040;
+$letra: #EEE;
+$marron: #272423;
+$gris: #4D4D4D;
+$amarillo: #D99536;
+$topheader: #201E1D;
+$grisclaro: #666;
+$violeta: #A336D9;
+$azul: #36A3D9;
+$verde: #30BF3C;
+$rojo: #ff2222;
+@mixin jover{
+	color: $marron;
+	-webkit-transition: color .70s linear;
+	-webkit-transition: background-color .70s ease-out;
+	-moz-transition: color .70s linear;
+	-moz-transition: background-color .70s linear;
+}
+@mixin borde_box{
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;  
+}
+@mixin link_blanco{
+	color: $letra;
+	-webkit-transition: color .70s linear;	
+	-moz-transition: color .70s linear;
+}
+
+
+body{
+	background-color: $fondo;
+}
+.container{
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: $marron;
+	color: $letra;
+	h2{
+		border-top: 1px dashed $borde;
+		border-bottom: 1px dashed $borde;
+		text-align: center;
+		font-size: 2.5em;		
+		font-weight: bold;
+		font-style: Arial;		
+		padding: 0px;
+		a{			
+			text-align: left;
+			padding: 15px 0px 15px 100px;			
+			text-decoration: none;
+			display: block;
+			width: 100;
+			position: relative;
+		}		
+
+	}
+	
+	article{
+		section{
+			color: $gris;
+			font-weight: bold;
+			span{
+				float: right;
+			}
+			a{
+				text-decoration: none;
+				color: $grisclaro;			
+			}
+			a:hover{
+				color: #eee;
+				-webkit-transition: color .25s linear;
+				-moz-transition: color .25s linear;
+			}
+		}
+		padding-left: 100px;
+		padding-right: 100px;		
+		padding-bottom: 20px;
+		font-size: 1.1em;
+		p{
+			line-height: 1.6em;
+		font-family: Verdana;
+		}		
+	}
+	.amarillo{		
+		a{
+			color: $amarillo;
+			text-decoration: none;
+		}		
+		a:hover{
+			color: $marron;
+			background-color: $amarillo;
+			@include jover;
+		}
+	}
+	
+	.violeta{		
+		a{
+			color: $violeta;
+			text-decoration: none;
+		}		
+		a:hover{
+			color: $marron;
+			background-color: $violeta;
+			@include jover;
+		}		
+	}
+	
+	.azul{		
+		a{
+			color: $azul;
+			text-decoration: none;
+		}		
+		a:hover{
+			color: $marron;
+			background-color: $azul;
+			@include jover;
+		}
+	}
+	
+	.verde{		
+		a{
+			color: $verde;
+			text-decoration: none;
+		}		
+		a:hover{
+			color: $marron;
+			background-color: $verde;
+			@include jover;
+		}
+	}
+	
+	.rojo{		
+		a{
+			color:  $rojo;
+			text-decoration: none;
+		}		
+		a:hover{
+			color: $marron;
+			background-color: $rojo;
+			@include jover;
+		}
+	}
+	
+	.form{
+		padding: 15px 100px 15px 100px;
+		font-size: 1.4em;
+		li{
+			color: $rojo;
+		}
+
+		.field textarea {			
+			vertical-align: top;			
+			margin: 10px;
+			border: 2px solid $amarillo;
+			background-color: $gris;
+			@include borde_box;
+  			color: $letra;  			
+  			-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  			-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+		}	
+		label{			
+			color: $amarillo;
+			padding: 4px;
+			margin-bottom: 10px;
+			
+
+		}		
+		.field{
+			margin: 10px;
+		}
+		input{
+			margin: 10px;
+			border: 2px solid $amarillo;
+			background-color: $gris;
+			@include borde_box;
+  			color: $letra;
+  			height: 30px;
+  			-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  			-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+		}
+		.field_with_errors input, .field_with_errors textarea{
+			border: 2px solid $rojo;
+			@include borde_box;
+		}
+
+	}
+	.creado{
+			color: $gris;
+			padding-left: 100px;
+			margin-bottom: 5px;
+		}
+	.parrafo_show{
+		line-height: 1.6em;
+		font-family: Verdana;
+		padding-top: 5px;
+		a{
+			background-color: $marron;
+		}
+		a:hover{
+			background-color: $marron;
+			@include link_blanco;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+	<h2 class="<%= cycle("rojo","amarillo","violeta","azul","verde")%>">
+		<%= link_to post.titulo, post_path(post) %>
+	</h2>
+	<p class="creado"><%= post.created_at.strftime("%H:%M  %d/%m/%y") %></p>
+	<article>
+		<p class="<%= current_cycle %> parrafo_show"><%= raw post.contenido %></p>		
+	</article>
+<% end %>
