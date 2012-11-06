@@ -4,8 +4,10 @@ class CreateComentarios < ActiveRecord::Migration
       t.string :nombre
       t.string :email
       t.text :cont
+      t.references :post
 
       t.timestamps
     end
+    add_index :comentarios, :post_id
   end
 end

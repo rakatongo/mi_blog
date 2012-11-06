@@ -2,4 +2,20 @@
 <h2 class="<%= a %>"><%= link_to @post.titulo, post_path(@post)%></h2>
 <article>
 	<p class="<%= a %> parrafo_show"><%= raw @post.contenido %></p>
+	<span class="home <%= a %>"><%= link_to "Home", root_path %></span>
+	<section class="comentarios_in">
+		<h3>COMENTARIOS</h3>
+		<ul>
+			<% @post.comentarios.each do |c| %>
+				<li>
+					<%= c.nombre.titleize %>, <%= c.created_at.strftime("%H:%M  %d/%m/%y") %>
+					<b>#<%= c.id %></b>
+					 <p><%= c.cont %></p>
+				</li>
+			<% end %>			
+		</ul>
+	</section>
+	<section class="comentario_form">
+		<%= render 'form_comentario' %>
+	</section>	
 </article>

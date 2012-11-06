@@ -25,6 +25,8 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+		@comentarios = @post.comentarios.all(params[:post_id])
+		
 	end
 
 	def edit

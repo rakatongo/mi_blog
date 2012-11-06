@@ -1,7 +1,7 @@
 MiBlog::Application.routes.draw do
 
   resources :posts do
-    resources :comentarios
+    resources :comentarios, only: [:create, :destroy]
   end
 
   root to: 'posts#index'

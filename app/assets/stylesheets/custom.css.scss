@@ -14,10 +14,8 @@ $verde: #30BF3C;
 $rojo: #ff2222;
 @mixin jover{
 	color: $marron;
-	-webkit-transition: color .70s linear;
-	-webkit-transition: background-color .70s ease-out;
-	-moz-transition: color .70s linear;
-	-moz-transition: background-color .70s linear;
+	-webkit-transition: all .50s linear;	
+	-moz-transition: all .50s ease-in-out;
 }
 @mixin borde_box{
 	-moz-box-sizing: border-box; 
@@ -33,6 +31,7 @@ $rojo: #ff2222;
 
 body{
 	background-color: $fondo;
+
 }
 .container{
 	width: 800px;
@@ -40,6 +39,7 @@ body{
 	margin-right: auto;
 	background-color: $marron;
 	color: $letra;
+	text-decoration: none;
 	h2{
 		border-top: 1px dashed $borde;
 		border-bottom: 1px dashed $borde;
@@ -54,15 +54,32 @@ body{
 			text-decoration: none;
 			display: block;
 			width: 100;
-			position: relative;
+			position: relative;			
 		}		
 
 	}
 	
 	article{
 		section{
-			color: $gris;
+			color: $grisclaro;
 			font-weight: bold;
+			margin-top: 60px;
+			font-size: 1.4em;
+			text-decoration: none;
+			ul{
+				list-style-position: outside;
+				list-style-type: none;
+			}
+			li{
+				border-top: 1px solid $gris;
+				padding: 10px 0 10px 0;
+				font-size: .6em;
+				font-weight: normal;
+				p{
+					color: $letra;
+				}
+
+			}
 			span{
 				float: right;
 			}
@@ -82,16 +99,15 @@ body{
 		font-size: 1.1em;
 		p{
 			line-height: 1.6em;
-		font-family: Verdana;
+			font-family: Verdana;
 		}		
 	}
 	.amarillo{		
 		a{
-			color: $amarillo;
-			text-decoration: none;
+			color: $amarillo;			
+			transition: all .70s ease-in;
 		}		
-		a:hover{
-			color: $marron;
+		a:hover{			
 			background-color: $amarillo;
 			@include jover;
 		}
@@ -99,11 +115,10 @@ body{
 	
 	.violeta{		
 		a{
-			color: $violeta;
-			text-decoration: none;
+			color: $violeta;			
+			transition: all .70s ease-in;
 		}		
-		a:hover{
-			color: $marron;
+		a:hover{			
 			background-color: $violeta;
 			@include jover;
 		}		
@@ -111,11 +126,10 @@ body{
 	
 	.azul{		
 		a{
-			color: $azul;
-			text-decoration: none;
+			color: $azul;			
+			transition: all .70s linear;
 		}		
-		a:hover{
-			color: $marron;
+		a:hover{			
 			background-color: $azul;
 			@include jover;
 		}
@@ -124,24 +138,22 @@ body{
 	.verde{		
 		a{
 			color: $verde;
-			text-decoration: none;
+			transition: all .70s ease-in;
 		}		
-		a:hover{
-			color: $marron;
-			background-color: $verde;
+		a:hover{			
+			background-color: $verde;			
 			@include jover;
 		}
 	}
 	
 	.rojo{		
 		a{
-			color:  $rojo;
-			text-decoration: none;
+			color:  $rojo;			
+			transition: all .70s ease-in;
 		}		
-		a:hover{
-			color: $marron;
-			background-color: $rojo;
+		a:hover{			
 			@include jover;
+			background-color: $rojo;
 		}
 	}
 	
@@ -203,13 +215,96 @@ body{
 	.parrafo_show{
 		line-height: 1.6em;
 		font-family: Verdana;
-		padding-top: 5px;
+		padding-top: 5px;		
 		a{
 			background-color: $marron;
+			text-decoration: none;
 		}
 		a:hover{
 			background-color: $marron;
 			@include link_blanco;
 		}
 	}
+	.comentarios_in{
+		ul{
+			height: auto;
+			border-left: 1px solid $grisclaro;
+
+		}
+		b{
+			color: $letra;
+			float: right;
+		}
+		li{
+			
+			box-shadow: 0 3px 3px rgba(0,0,0,.7);			
+			padding: 10px 30px 10px 30px;			
+			margin: 10px 20px 10px 20px;			
+			p{
+				word-wrap: break-word;
+			}
+		}
+	}
+	.comentario_form{
+		text-align: center;
+		vertical-align: top;
+		.field{
+			margin: 15px;
+		}
+		label{
+			color: $amarillo;
+			display: block;
+			margin: 10px 0px 5px 10px;		
+			text-shadow: 0 4px 4px rgba(0,0,0,.8);	
+		}
+		textarea{
+			border-radius: 12px;
+			border: 1px solid $fondo;
+		}
+		textarea:focus{
+			box-shadow: 0 5px 5px rgba(0, 0, 0, .6);
+			border: 3px solid $amarillo;
+			transition: all .4s ease-in;
+		}
+		input{
+			border: 1px solid $fondo;
+			height: 20px;
+			border-radius: 8px;
+			
+		}
+		input:focus{
+			box-shadow: 0 5px 5px rgba(0, 0, 0, .6);
+			border: 2px solid $amarillo;
+			transition: all .4s ease-in;
+		}
+		.actions{
+			margin-left: 25px;
+		}
+		.boton{			
+			background-color: $amarillo;
+			border: 1px solid $fondo;
+			height: 30px;
+			padding-bottom: 10px;
+			
+			color: $letra;
+			font-size: 1em;
+			box-shadow: 0 5px 5px rgba(0, 0, 0, .6);
+			text-shadow: 0 4px 4px rgba(0,0,0,.8);
+			cursor: pointer;
+		}
+	}
+	.home{
+		margin-top: 10px;
+		display: inline-block;
+		a{				
+			background-color: $fondo;
+			text-shadow: 0 4px 4px rgba(0,0,0,.8);
+			box-shadow: 0 4px 4px rgba(0,0,0,.8);
+			padding: 4px;
+			font-size: 1.4em;
+			text-decoration: none;
+			border-radius: 7px;
+			line-height: 1.4em;
+		}		
+	}	
 }

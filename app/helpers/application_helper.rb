@@ -12,7 +12,7 @@ module ApplicationHelper
 
 	def random_color
 		a = ["rojo","amarillo","violeta","azul","verde"]
-		a[rand(4)]
+		a[rand(5)]
 	end
 
 

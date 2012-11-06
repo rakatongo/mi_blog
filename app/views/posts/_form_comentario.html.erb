@@ -1,0 +1,17 @@
+<%= form_for([@post, @post.comentarios.build]) do |f|%>
+	<div class="field">
+		<%= f.label :nombre %>
+		<%= f.text_field :nombre, placeholder: "Escribe tu nombre" %>
+	</div>
+	<div class="field">
+		<%= f.label :email %>
+		<%= f.text_field :email, placeholder: "Escribe tu email" %>
+	</div>
+	<div class="field">
+		<%= f.label :comentario %>
+		<%= f.text_area :cont, placeholder: "Deja un comentario..." %>
+	</div>
+	<div class="actions">
+		<%= f.submit "Enviar", class: "boton" %>
+	</div>
+<% end %>
