@@ -1,5 +1,9 @@
 MiBlog::Application.routes.draw do
 
+  resources :sessions, only: [:create, :destroy,:new]
+  #resources :users 
+  match '/login', to: "sessions#new"
+  
   resources :posts do
     resources :comentarios, only: [:create, :destroy]
   end

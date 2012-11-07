@@ -21,6 +21,6 @@ class Comentario < ActiveRecord::Base
   validates :cont, :email, :nombre, presence: true
   validates :email, format: { with: EMAIL_FORMAT }
   validates :cont, length: { maximum: 1000 }
-  default_scope order: 'comentarios.created_at DESC'
+ 
 
 end

@@ -4,7 +4,7 @@
 	</h2>
 	<p class="creado">
 		<%= post.created_at.strftime("%H:%M  %d/%m/%y") %> 
-		<span><%= comen(post.comentarios.count) %></span>
+		<span><%= link_to (comen(post.comentarios.count)), post_path(post) %></span>
 	</p>
 	<article>
 		<p class="<%= current_cycle %> parrafo_show"><%= raw post.contenido %></p>		

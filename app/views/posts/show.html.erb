@@ -1,4 +1,6 @@
 <% a = random_color %>
+<% d = 0 %>
+
 <h2 class="<%= a %>"><%= link_to @post.titulo, post_path(@post)%></h2>
 <article>
 	<p class="<%= a %> parrafo_show"><%= raw @post.contenido %></p>
@@ -9,8 +11,13 @@
 			<% @post.comentarios.each do |c| %>
 				<li>
 					<%= c.nombre.titleize %>, <%= c.created_at.strftime("%H:%M  %d/%m/%y") %>
-					<b>#<%= c.id %></b>
+					<b>#<%= d += 1 %></b>
 					 <p><%= c.cont %></p>
+					 <% if loged_in? %>
+					 	<span class="home <%= a %>">
+					 		<%= link_to "Borrar", [@post,c], method: :delete %>
+					 	</span>
+					 <% end %>
 				</li>
 			<% end %>			
 		</ul>

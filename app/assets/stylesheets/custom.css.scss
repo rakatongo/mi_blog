@@ -14,8 +14,8 @@ $verde: #30BF3C;
 $rojo: #ff2222;
 @mixin jover{
 	color: $marron;
-	-webkit-transition: all .50s linear;	
-	-moz-transition: all .50s ease-in-out;
+	-webkit-transition: all .30s linear;	
+	-moz-transition: all .30s ease-in-out;
 }
 @mixin borde_box{
 	-moz-box-sizing: border-box; 
@@ -105,7 +105,7 @@ body{
 	.amarillo{		
 		a{
 			color: $amarillo;			
-			transition: all .70s ease-in;
+			transition: all .40s ease-in;
 		}		
 		a:hover{			
 			background-color: $amarillo;
@@ -116,7 +116,7 @@ body{
 	.violeta{		
 		a{
 			color: $violeta;			
-			transition: all .70s ease-in;
+			transition: all .40s ease-in;
 		}		
 		a:hover{			
 			background-color: $violeta;
@@ -127,7 +127,7 @@ body{
 	.azul{		
 		a{
 			color: $azul;			
-			transition: all .70s linear;
+			transition: all .40s linear;
 		}		
 		a:hover{			
 			background-color: $azul;
@@ -138,7 +138,7 @@ body{
 	.verde{		
 		a{
 			color: $verde;
-			transition: all .70s ease-in;
+			transition: all .40s ease-in;
 		}		
 		a:hover{			
 			background-color: $verde;			
@@ -149,7 +149,7 @@ body{
 	.rojo{		
 		a{
 			color:  $rojo;			
-			transition: all .70s ease-in;
+			transition: all .40s ease-in;
 		}		
 		a:hover{			
 			@include jover;
@@ -209,6 +209,15 @@ body{
 				color: $grisclaro;
 				margin-right: 100px;
 				float: right;
+				a{
+					text-decoration: none;
+					color: $grisclaro;
+					transition: all .3 ease-in;
+				}
+				a:hover{
+					color: $letra;
+					transition: color .3s ease-in-out;
+				}
 			}
 		}
 		/*  Parrafos */ 
@@ -236,9 +245,9 @@ body{
 			float: right;
 		}
 		li{
-			
+			display: block;
 			box-shadow: 0 3px 3px rgba(0,0,0,.7);			
-			padding: 10px 30px 10px 30px;			
+			padding: 10px 30px 50px 30px;			
 			margin: 10px 20px 10px 20px;			
 			p{
 				word-wrap: break-word;
@@ -260,17 +269,24 @@ body{
 		textarea{
 			border-radius: 12px;
 			border: 1px solid $fondo;
+			transition: all .4s ease-in;
+			padding: 4px;
+			font-size: .8em;
 		}
 		textarea:focus{
 			box-shadow: 0 5px 5px rgba(0, 0, 0, .6);
 			border: 3px solid $amarillo;
-			transition: all .4s ease-in;
+			transition: all .3s ease-in;
 		}
 		input{
 			border: 1px solid $fondo;
 			height: 20px;
 			border-radius: 8px;
+			transition: all .4s ease-in;
 			
+		}
+		input[type="text"]{
+			padding: 4px;
 		}
 		input:focus{
 			box-shadow: 0 5px 5px rgba(0, 0, 0, .6);
@@ -294,8 +310,9 @@ body{
 		}
 	}
 	.home{
-		margin-top: 10px;
-		display: inline-block;
+		margin-top: 4px;
+		
+		display: inline;
 		a{				
 			background-color: $fondo;
 			text-shadow: 0 4px 4px rgba(0,0,0,.8);
@@ -304,7 +321,7 @@ body{
 			font-size: 1.4em;
 			text-decoration: none;
 			border-radius: 7px;
-			line-height: 1.4em;
+			line-height: 1.4em;			
 		}		
 	}	
 }

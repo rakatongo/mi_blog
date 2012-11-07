@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	before_filter :logueado, except: [:index, :show]
 
 	def index
 		@posts = Post.all

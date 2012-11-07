@@ -11,5 +11,11 @@ class ComentariosController < ApplicationController
 			redirect_to post_path(@post)
 		end
 	end
+
+	def destroy		
+		@comentario = Comentario.find(params[:id])
+		@comentario.delete
+		redirect_to post_path(params[:post_id])
+	end
 end
 
